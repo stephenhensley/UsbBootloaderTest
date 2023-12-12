@@ -30,8 +30,9 @@ int main()
     /** Initialize the boot switch */
     bootloader_switch.Init(seed::D27);
 
+    uint32_t blink_rate = 50; /**< Change me to test tweaking the program! */
+
     /** Timing variables */
-    uint32_t blink_rate = 50;
     uint32_t now, blink_time;
     now = blink_time = System::GetNow();
 
