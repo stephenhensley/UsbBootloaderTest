@@ -1,0 +1,43 @@
+{
+  "configurations": [
+    {
+      "cwd": "${workspaceFolder}",
+      "debuggerArgs": [
+        "-d",
+        "${workspaceRoot}"
+      ],
+      // Here's where you can put the path to the program you want to debug:
+      "executable": "${workspaceRoot}/src/build/UsbBootloaderTest.elf",
+      "interface": "jtag",
+      "name": "Debug Blink",
+      "openOCDLaunchCommands": [
+        "init",
+        "reset init"
+        // "gdb_breakpoint_override hard"
+      ],
+      // "preLaunchTask": "Build",
+      "preRestartCommands": [
+        "load",
+        "enable breakpoint",
+        "monitor reset",
+      ],
+      "liveWatch": {
+        "enabled": true,
+        "samplesPerSecond": 2
+      },
+      "request": "launch",
+      "device": "STM32H750",
+      "runToEntryPoint": "main",
+      "servertype": "openocd",
+      //"servertype": "stlink",
+      "showDevDebugOutput": "parsed",
+      "svdFile": "${workspaceRoot}/.vscode/STM32H750x.svd",
+      "type": "cortex-debug",
+      "configFiles": [
+        "interface/stlink.cfg",
+        "target/stm32h7x.cfg"
+      ],
+    }
+  ],
+  "version": "0.2.0"
+}

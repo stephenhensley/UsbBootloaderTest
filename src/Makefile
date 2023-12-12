@@ -1,5 +1,5 @@
 # Project Name
-TARGET = Blink
+TARGET = UsbBootloaderTest.bin
 
 # Configure for debugging
 # common configurations:
